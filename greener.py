@@ -1,17 +1,32 @@
-from github import Github
-from datetime import datetime
-import os
+name: Manual Trigger Job
 
-today_date = datetime.today().strftime("%Y-%m-%d")
+on:
+  workflow_dispatch:
 
-api_key = os.environ['api_key']
-g = Github(api_key)
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
 
-repo = g.get_repo("Xtha-Sunil/Greenify")
+    env:
+      API_KEY: ${{ secrets.API_KEY }}
 
-for i in range(1,7):
-    repo.create_file(
-        path=f"{today_date}/new{i}.txt",
-        message="Creating a new file",
-        content=f"file {i + 1}"
-    )
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x' # Specify the Python version you want
+
+      - name: Debug - Print Environment Variable
+        run: echo "API_KEY is set"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install PyGithub
+
+      - name: Run script
+        run: |
+          python greener.py
