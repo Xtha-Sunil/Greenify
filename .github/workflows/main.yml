@@ -1,15 +1,15 @@
 name: Scheduled Job
 
-env:
-	api_key = ${{ API_KEY }}
-
 on:
   schedule:
-    - cron: "25 06 * * *"
+    - cron: "50 08 * * *"
 
 jobs:
   run-script:
     runs-on: ubuntu-latest
+
+    env:
+      api_key: ${{ secrets.API_KEY }}
 
     steps:
       - name: Checkout repository
