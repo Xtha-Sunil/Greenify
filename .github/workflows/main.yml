@@ -1,8 +1,11 @@
 name: Scheduled Job
 
+env:
+	api_key = ${{ API_KEY }}
+
 on:
   schedule:
-    - cron: "50 05 * * *"
+    - cron: "25 06 * * *"
 
 jobs:
   run-script:
