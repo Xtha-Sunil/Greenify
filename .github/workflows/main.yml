@@ -2,7 +2,7 @@ name: Scheduled Job
 
 on:
   schedule:
-    - cron: "15 0 * * *"
+    - cron: "50 05 * * *"
 
 jobs:
   run-script:
@@ -24,4 +24,4 @@ jobs:
 
       - name: Run script
         run: |
-          python greenify.py
+          python greener.py
