@@ -1,26 +1,14 @@
 from github import Github
 from datetime import datetime
-from dotenv import load_dotenv
 import os
 
-load_dotenv()
-
-# Get today's date
 today_date = datetime.today().strftime("%Y-%m-%d")
 
-# Fetch the API key from environment variables
-api_key = os.getenv('api_key')
-if not api_key:
-    raise ValueError("API key not found. Ensure it's set in the environment variables.")
+g = Github(os.getenv('api_key'))
 
-# Authenticate with GitHub
-g = Github(api_key)
-
-# Access the repository
 repo = g.get_repo("Xtha-Sunil/Greenify")
 
-# Create files in the repository
-for i in range(1, 7):
+for i in range(8,11):
     file_path = f"{today_date}/new{i}.txt"
     file_content = f"file {i + 1}"
     
