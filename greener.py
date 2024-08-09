@@ -1,6 +1,9 @@
 from github import Github
 from datetime import datetime
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
 
 # Get today's date
 today_date = datetime.today().strftime("%Y-%m-%d")
