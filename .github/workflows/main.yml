@@ -7,9 +7,6 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
 
-    env:
-      api_key: ${{ secrets.API_KEY }}  # Environment variable inside the job
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -25,5 +22,7 @@ jobs:
           pip install PyGithub
 
       - name: Run script
+        env:
+          	api_key: ${{ secrets.API_KEY }}
         run: |
           python greener.py
