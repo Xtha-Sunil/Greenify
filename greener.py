@@ -8,7 +8,7 @@ g = Github(os.getenv('api_key'))
 
 repo = g.get_repo("Xtha-Sunil/Greenify")
 
-for i in range(8,11):
+for i in range(8):
     file_path = f"{today_date}/new{i}.txt"
     file_content = f"file {i + 1}"
     
