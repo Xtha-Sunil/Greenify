@@ -23,6 +23,6 @@ jobs:
 
       - name: Run script
         env:
-          	api_key: ${{ secrets.API_KEY }}
+          api_key: ${{ secrets.API_KEY }}
         run: |
           python greener.py
