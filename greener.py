@@ -6,7 +6,7 @@ import os
 today_date = datetime.today().strftime("%Y-%m-%d")
 
 # Fetch the API key from environment variables
-api_key = os.environ.get('api_key')
+api_key = os.getenv('api_key')
 if not api_key:
     raise ValueError("API key not found. Ensure it's set in the environment variables.")
 
