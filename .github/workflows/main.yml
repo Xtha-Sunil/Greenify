@@ -1,15 +1,14 @@
 name: Scheduled Job
 
 on:
-  schedule:
-    - cron: "50 08 * * *"
+  workflow_dispatch:
 
+env:
+    - api_key: ${{ secrets.API_KEY }}
+    
 jobs:
   run-script:
     runs-on: ubuntu-latest
-
-    env:
-      api_key: ${{ secrets.API_KEY }}
 
     steps:
       - name: Checkout repository
