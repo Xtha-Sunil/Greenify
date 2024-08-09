@@ -1,8 +1,7 @@
 name: Green Github
 
 on:
-  schedule:
-    - cron: "50 13 * * *"  # Run at 6 PM Nepal time (UTC+5:45)
+  workflow_dispatch:
 
 jobs:
   run-script:
