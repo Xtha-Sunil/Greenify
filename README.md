@@ -1,3 +1,5 @@
+# Realised only forking doesn't work so you need to setup in own repo.
+
 # Automated Daily Commits for a Green GitHub Heatmap
 
 This automation will make daily commits to ensure your GitHub heatmap stays green. Follow the steps below to set it up:
