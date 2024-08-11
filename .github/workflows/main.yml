@@ -2,7 +2,7 @@ name: Green Github
 
 on:
   schedule:
-    - cron: '15 12 * * *'  # Runs at 6 PM Nepal time (UTC+5:45)
+    - cron: '15 09 * * *'  # Runs at 3 PM Nepal time (UTC+5:45)
 
 jobs:
   run-script:
