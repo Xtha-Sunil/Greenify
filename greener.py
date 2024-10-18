@@ -10,7 +10,7 @@ g = Github(api_key)
 username = "Xtha-Sunil"
 repo = g.get_repo(f"{username}/Greenify")
 
-for i in range(101):
+for i in range(201):
     file_path = f"{today_date}/file{i}.txt"
     file_content = "Automation is helpful."
     
